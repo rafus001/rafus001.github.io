@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#070711">
+<meta name="description" content="RAFUS Official — Gaming, community e Sud Italy RP.">
+<title>RAFUS — Official</title>
+<style>
+:root{--bg:#06070d;--panel:#0b0d18;--purple:#a855f7;--cyan:#22d3ee;--pink:#ff3cac;--white:#f7f7ff;--muted:#a6a8c3}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:Inter,system-ui,-apple-system,Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--white);overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;background:radial-gradient(ellipse at 12% 10%,#5418a833,transparent 38%),radial-gradient(ellipse at 85% 28%,#063d6540,transparent 36%),linear-gradient(#05060b,#080916 55%,#05060b)}
+a{color:inherit;text-decoration:none}
+.nav{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:15px clamp(18px,5vw,72px);background:#05060bea;border-bottom:1px solid #a855f744;backdrop-filter:blur(18px)}
+.brand{display:flex;align-items:center;gap:10px;font-weight:950;letter-spacing:3px}
+.brand-mark{width:38px;height:38px;display:grid;place-items:center;border:1px solid var(--purple);border-radius:12px;color:#fff;font-size:23px;text-shadow:0 0 12px var(--purple);box-shadow:0 0 18px #a855f755}
+.navlinks{display:flex;gap:clamp(12px,2.3vw,30px);align-items:center;font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#c6c7dd}
+.navlinks a:hover{color:#fff;text-shadow:0 0 12px var(--purple)}
+.pill,.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:13px 19px;border:1px solid #b16cff;border-radius:12px;background:linear-gradient(110deg,#7c3aed35,#0c1228);box-shadow:0 0 22px #8b5cf633,inset 0 0 15px #8b5cf611;font-size:12px;font-weight:900;letter-spacing:.7px;text-transform:uppercase;transition:.25s}
+.pill:hover,.btn:hover{transform:translateY(-3px);box-shadow:0 0 30px #a855f799;border-color:#fff}
+.hero{position:relative;isolation:isolate;min-height:590px;display:grid;place-items:center;text-align:center;padding:100px 20px 80px;overflow:hidden;border-bottom:1px solid #a855f733}
+.hero:before{content:"";position:absolute;inset:0;z-index:-2;background:linear-gradient(90deg,#05060bdc,#07081799 45%,#05060bdc),radial-gradient(ellipse at 50% 42%,#7c3aed44,transparent 48%),linear-gradient(145deg,#06152d,#090714 55%,#21091f)}
+.hero:after{content:"";position:absolute;inset:auto 0 0;height:140px;z-index:-1;background:linear-gradient(transparent,var(--bg))}
+.gridglow{position:absolute;inset:0;z-index:-1;opacity:.23;background-image:linear-gradient(#7c3aed22 1px,transparent 1px),linear-gradient(90deg,#7c3aed22 1px,transparent 1px);background-size:46px 46px;mask-image:linear-gradient(transparent,#000 30%,#000 80%,transparent)}
+.hero-kicker{display:inline-block;color:#d8b4fe;font-size:11px;font-weight:900;letter-spacing:4px;text-transform:uppercase;padding:9px 14px;border:1px solid #a855f766;border-radius:999px;background:#0b0719aa}
+h1{margin:24px 0 12px;font-size:clamp(64px,14vw,150px);line-height:.84;letter-spacing:clamp(2px,1.2vw,12px);font-weight:1000;background:linear-gradient(180deg,#fff 5%,#e9d5ff 34%,#a855f7 65%,#312e81 100%);color:transparent;background-clip:text;-webkit-background-clip:text;filter:drop-shadow(0 0 18px #a855f788);animation:titlePulse 4s ease-in-out infinite}
+@keyframes titlePulse{0%,100%{filter:drop-shadow(0 0 14px #a855f766)}50%{filter:drop-shadow(0 0 30px #22d3ee66)}}
+.crown{display:block;font-size:34px;margin-bottom:8px;filter:drop-shadow(0 0 12px #fbbf24)}
+.hero-sub{font-size:clamp(11px,2vw,15px);font-weight:900;letter-spacing:clamp(2px,.8vw,8px);text-transform:uppercase;color:#e4e4f7}
+.slogan{font-size:clamp(29px,5vw,48px);font-style:italic;font-weight:800;color:#d8b4fe;text-shadow:0 0 20px #a855f7;margin:18px 0 26px}
+.tricolor{width:100px;height:5px;margin:-12px auto 26px;border-radius:10px;background:linear-gradient(90deg,#00dc77 0 33%,#fff 33% 66%,#ff304f 66%)}
+.hero-actions{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
+.btn.primary{background:linear-gradient(110deg,#7c3aed,#4c1d95);border-color:#d8b4fe}
+.section{padding:78px clamp(18px,5vw,72px);max-width:1400px;margin:auto}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:18px;margin-bottom:28px}
+.eyebrow{font-size:10px;color:#c084fc;letter-spacing:3px;font-weight:900;text-transform:uppercase;margin-bottom:10px}
+h2{font-size:clamp(28px,4vw,42px);letter-spacing:-1px}
+.lead{color:var(--muted);line-height:1.7;max-width:610px;margin-top:10px}
+.social-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.social-card{position:relative;isolation:isolate;min-height:150px;padding:23px 18px;border:1px solid var(--edge);border-radius:18px;background:linear-gradient(145deg,#111322,#080912);text-align:center;overflow:hidden;transition:.25s;animation:float 4s ease-in-out infinite}
+.social-card:nth-child(2){animation-delay:.3s}.social-card:nth-child(3){animation-delay:.6s}.social-card:nth-child(4){animation-delay:.9s}
+.social-card:before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(circle at 50% 0,var(--glow),transparent 68%);opacity:.38}
+.social-card:hover{transform:translateY(-7px);box-shadow:0 0 28px var(--glow);border-color:var(--edge)}
+.social-card .symbol{font-size:31px;font-weight:1000;color:var(--edge);text-shadow:0 0 18px var(--glow);margin-bottom:11px}
+.social-card small{display:block;color:var(--muted);font-size:10px;font-weight:900;letter-spacing:2px;text-transform:uppercase}
+.social-card strong{display:block;font-size:17px;margin-top:6px}
+@keyframes float{0%,100%{translate:0 0}50%{translate:0 -4px}}
+.social-card.instagram{--edge:#ff70b8;--glow:#ff3cac}.social-card.tiktok{--edge:#38e8ed;--glow:#22d3ee}.social-card.twitch{--edge:#b68aff;--glow:#8b5cf6}.social-card.discord{--edge:#8298ff;--glow:#5865f2}
+.split{display:grid;grid-template-columns:1fr 1.2fr;gap:22px}
+.community{position:relative;overflow:hidden;padding:34px;border:1px solid #ffffff20;border-radius:22px;background:radial-gradient(ellipse at 20% 0,#0c754b55,transparent 48%),radial-gradient(ellipse at 90% 100%,#b91c1c44,transparent 45%),linear-gradient(145deg,#101628,#080911)}
+.community h3{font-size:clamp(30px,4vw,44px);line-height:1.05;margin:10px 0 14px}
+.italy{background:linear-gradient(90deg,#19df7b 0 32%,#fff 32% 65%,#ff4055 65%);color:transparent;background-clip:text;-webkit-background-clip:text}
+.community p{color:#c5c6d8;line-height:1.7;font-size:14px;max-width:450px;margin-bottom:24px}
+.game-area{padding:28px;border:1px solid #ffffff20;border-radius:22px;background:linear-gradient(145deg,#101221,#080911)}
+.gamecards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:20px}
+.gamecard{border:1px solid #ffffff20;border-radius:14px;overflow:hidden;background:#06070d;transition:.25s}
+.gamecard:hover{transform:translateY(-5px);border-color:#a855f7;box-shadow:0 0 20px #a855f733}
+.gameart{height:100px;display:grid;place-items:center;font-size:36px;background:radial-gradient(circle at 50% 20%,#7c3aed88,transparent 70%),linear-gradient(140deg,#18274a,#120c22)}
+.gamecard:nth-child(2) .gameart{background:radial-gradient(circle at 50% 20%,#0891b288,transparent 70%),linear-gradient(140deg,#18274a,#120c22)}
+.gamecard:nth-child(3) .gameart{background:radial-gradient(circle at 50% 20%,#f9731688,transparent 70%),linear-gradient(140deg,#18274a,#120c22)}
+.gameinfo{padding:12px}.gameinfo strong{display:block;font-size:12px}.gameinfo small{display:block;color:var(--muted);font-size:10px;margin-top:5px;line-height:1.4}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px}
+.stat{padding:20px;border:1px solid #ffffff1c;border-radius:15px;background:#0b0c16;text-align:center}
+.stat strong{display:block;font-size:25px;color:#d8b4fe;text-shadow:0 0 15px #a855f755}.stat span{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--muted)}
+footer{padding:32px clamp(18px,5vw,72px);border-top:1px solid #a855f733;display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;color:var(--muted);font-size:12px}
+.footbrand{color:#fff;font-weight:950;letter-spacing:3px}.footlinks{display:flex;gap:15px;flex-wrap:wrap}.footlinks a:hover{color:#d8b4fe}
+@media(max-width:850px){.navlinks{display:none}.social-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.split{grid-template-columns:1fr}.hero{min-height:540px}.section{padding-top:58px;padding-bottom:58px}}
+@media(max-width:500px){.hero{min-height:500px;padding-top:75px}.hero-actions .btn{width:100%;max-width:310px}.social-card{min-height:135px;padding:18px 10px}.gamecards{grid-template-columns:1fr}.gamecard{display:grid;grid-template-columns:95px 1fr}.gameart{height:auto;min-height:88px}.stats{grid-template-columns:1fr}.section-head{display:block}.section-head>.pill{margin-top:18px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header class="nav">
+  <a class="brand" href="#home" aria-label="RAFUS Home"><span class="brand-mark">R</span><span>RAFUS</span></a>
+  <nav class="navlinks" aria-label="Navigazione principale">
+    <a href="#home">Home</a><a href="#social">Social</a><a href="#community">Community</a><a href="#gaming">Gaming</a>
+  </nav>
+  <a class="pill" href="https://discord.gg/suditalyrp" target="_blank" rel="noopener noreferrer">♧ Seguimi</a>
+</header>
+<main>
+<section class="hero" id="home">
+  <div class="gridglow"></div>
+  <div>
+    <span class="hero-kicker">Gaming • Community • Sud Italy RP</span>
+    <span class="crown">♛</span>
+    <h1>RAFUS</h1>
+    <p class="hero-sub">Gaming · Community · Sud Italy RP</p>
+    <p class="slogan">Play Different</p>
+    <div class="tricolor"></div>
+    <div class="hero-actions">
+      <a class="btn primary" href="https://discord.gg/suditalyrp" target="_blank" rel="noopener noreferrer">🎮 Entra nella community ↗</a>
+      <a class="btn" href="#gaming">▷ Guarda i miei giochi</a>
+    </div>
+  </div>
+</section>
+<section class="section" id="social">
+  <div class="section-head"><div><p class="eyebrow">Resta connesso</p><h2>I miei social</h2><p class="lead">Seguimi, guarda i contenuti e unisciti alla community RAFUS.</p></div></div>
+  <div class="social-grid">
+    <a class="social-card instagram" href="https://www.instagram.com/rafus_1/" target="_blank" rel="noopener noreferrer"><div class="symbol">◎</div><small>Instagram</small><strong>@rafus_1 ↗</strong></a>
+    <a class="social-card tiktok" href="https://www.tiktok.com/@rafusx1" target="_blank" rel="noopener noreferrer"><div class="symbol">♪</div><small>TikTok</small><strong>@rafusx1 ↗</strong></a>
+    <a class="social-card twitch" href="https://www.twitch.tv/rafus001" target="_blank" rel="noopener noreferrer"><div class="symbol">▣</div><small>Twitch</small><strong>@rafus001 ↗</strong></a>
+    <a class="social-card discord" href="https://discord.gg/suditalyrp" target="_blank" rel="noopener noreferrer"><div class="symbol">◉</div><small>Discord</small><strong>Sud Italy RP ↗</strong></a>
+  </div>
+</section>
+<section class="section" id="community">
+  <div class="split">
+    <div class="community">
+      <p class="eyebrow">La nostra community</p>
+      <h3><span class="italy">SUD ITALY</span><br>RP</h3>
+      <p>Entra nella community Sud Italy RP: roleplay, eventi, nuove amicizie e tanto divertimento. Ti aspettiamo!</p>
+      <a class="btn primary" href="https://discord.gg/suditalyrp" target="_blank" rel="noopener noreferrer">◉ Entra su Discord ↗</a>
+    </div>
+    <div class="game-area" id="gaming">
+      <p class="eyebrow">La mia zona gaming</p><h2>Gameplay</h2><p class="lead">Giochi, avventure e momenti da ricordare.</p>
+      <div class="gamecards">
+        <a class="gamecard" href="#social"><div class="gameart">🏎️</div><div class="gameinfo"><strong>GTA Online</strong><small>Auto, missioni e momenti epici</small></div></a>
+        <a class="gamecard" href="#community"><div class="gameart">🎮</div><div class="gameinfo"><strong>Roblox</strong><small>Roleplay e avventure</small></div></a>
+        <a class="gamecard" href="#social"><div class="gameart">✈️</div><div class="gameinfo"><strong>Flight Simulator</strong><small>Voli e mondi da esplorare</small></div></a>
+      </div>
+    </div>
+  </div>
+  <div class="stats">
+    <div class="stat"><strong>100%</strong><span>Passione gaming</span></div>
+    <div class="stat"><strong>24/7</strong><span>Voglia di giocare</span></div>
+    <div class="stat"><strong>🇮🇹</strong><span>Community italiana</span></div>
+  </div>
+</section>
+</main>
+<footer>
+  <div><div class="footbrand">♛ RAFUS</div><div>GAMING · COMMUNITY · SUD ITALY RP</div></div>
+  <div class="footlinks"><a href="https://www.instagram.com/rafus_1/" target="_blank" rel="noopener noreferrer">Instagram</a><a href="https://www.tiktok.com/@rafusx1" target="_blank" rel="noopener noreferrer">TikTok</a><a href="https://www.twitch.tv/rafus001" target="_blank" rel="noopener noreferrer">Twitch</a><a href="https://discord.gg/suditalyrp" target="_blank" rel="noopener noreferrer">Discord</a></div>
+  <div>© 2026 RAFUS Official</div>
+</footer>
+</body>
+</html>
