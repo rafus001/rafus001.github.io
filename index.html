@@ -57,9 +57,12 @@ h2{font-size:clamp(28px,4vw,42px);letter-spacing:-1px}
 .gamecards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:20px}
 .gamecard{border:1px solid #ffffff20;border-radius:14px;overflow:hidden;background:#06070d;transition:.25s}
 .gamecard:hover{transform:translateY(-5px);border-color:#a855f7;box-shadow:0 0 20px #a855f733}
-.gameart{height:100px;display:grid;place-items:center;font-size:36px;background:radial-gradient(circle at 50% 20%,#7c3aed88,transparent 70%),linear-gradient(140deg,#18274a,#120c22)}
-.gamecard:nth-child(2) .gameart{background:radial-gradient(circle at 50% 20%,#0891b288,transparent 70%),linear-gradient(140deg,#18274a,#120c22)}
-.gamecard:nth-child(3) .gameart{background:radial-gradient(circle at 50% 20%,#f9731688,transparent 70%),linear-gradient(140deg,#18274a,#120c22)}
+.gameart{height:130px;position:relative;overflow:hidden;background:#111}
+.gameart img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s,filter .5s;filter:saturate(1.12) contrast(1.06)}
+.gamecard:hover .gameart img{transform:scale(1.08);filter:saturate(1.3) contrast(1.08)}
+.gameart:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#06070dcc,transparent 65%);pointer-events:none}
+.gamecard:nth-child(2) .gameart img{object-position:center}
+.gamecard:nth-child(3) .gameart img{object-position:center}
 .gameinfo{padding:12px}.gameinfo strong{display:block;font-size:12px}.gameinfo small{display:block;color:var(--muted);font-size:10px;margin-top:5px;line-height:1.4}
 .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px}
 .stat{padding:20px;border:1px solid #ffffff1c;border-radius:15px;background:#0b0c16;text-align:center}
@@ -115,9 +118,9 @@ footer{padding:32px clamp(18px,5vw,72px);border-top:1px solid #a855f733;display:
     <div class="game-area" id="gaming">
       <p class="eyebrow">La mia zona gaming</p><h2>Gameplay</h2><p class="lead">Giochi, avventure e momenti da ricordare.</p>
       <div class="gamecards">
-        <a class="gamecard" href="#social"><div class="gameart">🏎️</div><div class="gameinfo"><strong>GTA Online</strong><small>Auto, missioni e momenti epici</small></div></a>
-        <a class="gamecard" href="#community"><div class="gameart">🎮</div><div class="gameinfo"><strong>Roblox</strong><small>Roleplay e avventure</small></div></a>
-        <a class="gamecard" href="#social"><div class="gameart">✈️</div><div class="gameinfo"><strong>Flight Simulator</strong><small>Voli e mondi da esplorare</small></div></a>
+        <a class="gamecard" href="https://www.rockstargames.com/gta-online" target="_blank" rel="noopener noreferrer"><div class="gameart"><img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=900&q=85" alt="Auto sportiva per la sezione GTA Online" loading="lazy"></div><div class="gameinfo"><strong>GTA Online</strong><small>Auto, missioni e momenti epici</small></div></a>
+        <a class="gamecard" href="https://www.roblox.com/games/7711635737/Emergency-Hamburg" target="_blank" rel="noopener noreferrer"><div class="gameart"><img src="https://tr.rbxcdn.com/180DAY-4eaacc5da1f6080d45cc1b0272aaf835/500/280/Image/Jpeg/noFilter" alt="Immagine ufficiale di Emergency Hamburg su Roblox" loading="lazy"></div><div class="gameinfo"><strong>Roblox: Emergency Hamburg</strong><small>Roleplay e avventure</small></div></a>
+        <a class="gamecard" href="https://www.flightsimulator.com/media/" target="_blank" rel="noopener noreferrer"><div class="gameart"><img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=900&q=85" alt="Aereo in volo per la sezione Flight Simulator" loading="lazy"></div><div class="gameinfo"><strong>Flight Simulator</strong><small>Voli e mondi da esplorare</small></div></a>
       </div>
     </div>
   </div>
